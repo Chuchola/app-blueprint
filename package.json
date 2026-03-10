@@ -1,0 +1,22 @@
+{
+  "name": "app-blueprint",
+  "private": true,
+  "packageManager": "yarn@4.12.0",
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,storefront -c blue,green \"yarn --cwd server dev\" \"yarn --cwd server-storefront dev\"",
+    "install:all": "yarn install && yarn --cwd server install && yarn --cwd server-storefront install",
+    "dev:server": "yarn --cwd server dev",
+    "dev:storefront": "yarn --cwd server-storefront dev",
+    "db:setup": "yarn --cwd server db:setup",
+    "db:seed": "yarn --cwd server db:seed",
+    "migrate": "yarn --cwd server medusa db:migrate",
+    "migrate:rollback": "yarn --cwd server medusa db:rollback",
+    "test": "yarn --cwd server test:integration:http",
+    "test:server:integration:http": "yarn --cwd server test:integration:http",
+    "test:server:integration:modules": "yarn --cwd server test:integration:modules",
+    "test:server:unit": "yarn --cwd server test:unit"
+  }
+}
