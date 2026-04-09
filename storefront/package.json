@@ -61,5 +61,5 @@
     "react": "19.0.4",
     "react-dom": "19.0.4"
   },
-  "packageManager": "yarn@4.11.0"
+  "packageManager": "yarn@4.12.0"
 }
