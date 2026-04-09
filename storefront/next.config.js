@@ -1,6 +1,9 @@
 const checkEnvVariables = require("./check-env-variables")
+const createNextIntlPlugin = require("next-intl/plugin")
 
 checkEnvVariables()
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts")
 
 /**
  * Medusa Cloud-related environment variables
@@ -12,6 +15,7 @@ const S3_PATHNAME = process.env.MEDUSA_CLOUD_S3_PATHNAME
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  output: "standalone",
   reactStrictMode: true,
   logging: {
     fetches: {
@@ -55,4 +59,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withNextIntl(nextConfig)
