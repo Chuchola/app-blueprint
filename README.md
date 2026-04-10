@@ -4,8 +4,8 @@
 
 1. Clone the project
    ```bash
-   git clone git@github.com:Chuchola/medusa-store-starter.git
-   cd app-blueprint
+   git clone git@github.com:Chuchola/medusa-store-starter.git some_store
+   cd some_store
    ```
 
 2. Install root workspace dependencies
