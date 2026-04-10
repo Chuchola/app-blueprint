@@ -37,6 +37,13 @@
 
 ## Deploy to Production or Staging
 
+**Prerequisites:**
+
+1. A clean Ubuntu server with root user and password
+2. A domain and subdomains: `api.domain`, `admin.domain`
+3. A generated SSH key. The public part of this key must be copied to the server to allow passwordless login
+
+**Steps:**
 1. Rename env templates in `deploy/prod_envs` (or `deploy/stage_envs`) by removing the `template` prefix and fill in the required parameters: VPS host, domain names, database/Redis passwords, SSH key path, etc.
    - `.env.setup-vps` — VPS connection and infrastructure settings
    - `.env.deploy-server` — Medusa server environment variables (secrets, API keys)
